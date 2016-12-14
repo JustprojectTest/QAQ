@@ -7,7 +7,7 @@
             android:gravity="center"
             android:textSize="16dp"
             android:textColor="#000"
-            android:text="1234"
+            android:text="12345678910"
             android:id="@+id/showtext"
             android:layout_width="match_parent"
             android:layout_height="50dp"/>
