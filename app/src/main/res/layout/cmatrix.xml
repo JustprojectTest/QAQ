@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+        <com.example.administrator.customviewdemo.CustomViewSeries.ColorMatrixView
+            android:id="@+id/MyImage"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+        <GridLayout
+              android:id="@+id/glay"
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="3"
+              android:columnCount="5"
+             android:rowCount="4" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <Button
+                    android:onClick="change"
+                    android:layout_weight="1"
+                    android:id="@+id/set"
+                    android:text="change"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:onClick="restore"
+                    android:layout_weight="1"
+                    android:id="@+id/restore"
+                    android:text="restore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+</LinearLayout>
