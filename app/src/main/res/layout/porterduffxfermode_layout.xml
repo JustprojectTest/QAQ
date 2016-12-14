@@ -7,10 +7,15 @@
                   android:layout_height="match_parent"
                   android:orientation="horizontal">
         <com.example.administrator.customviewdemo.CustomViewSeries.PorterDuffXfermodeView
+            android:visibility="gone"
             android:id="@+id/PorterDuffXfermodeView"
-            android:layout_width="400dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"/>
 
+        <com.example.administrator.customviewdemo.CustomViewSeries.DisInView
+            android:id="@+id/disView"
+            android:layout_width="400dp"
+            android:layout_height="match_parent"/>
         <ListView
             android:id="@+id/mode_list"
             android:layout_width="100dp"

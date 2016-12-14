@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".MVP.View.CMatrix"/>
         <activity android:name=".MVP.View.PorterDuffXfermodeActivity"/>
+        <activity android:name=".MVP.View.EraserActivity"/>
     </application>
 
 </manifest>

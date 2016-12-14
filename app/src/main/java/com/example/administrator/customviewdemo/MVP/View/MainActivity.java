@@ -68,4 +68,10 @@ public class MainActivity extends BaseActivity {
         intent.setClass(MainActivity.this,PorterDuffXfermodeActivity.class);
         startActivity(intent);
     }
+
+    public void clickToEraser(View v){
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,EraserActivity.class);
+        startActivity(intent);
+    }
 }

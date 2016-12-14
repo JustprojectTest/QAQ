@@ -8,6 +8,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.example.administrator.customviewdemo.Base.BaseActivity;
+import com.example.administrator.customviewdemo.CustomViewSeries.DisInView;
 import com.example.administrator.customviewdemo.CustomViewSeries.PorterDuffXfermodeView;
 import com.example.administrator.customviewdemo.R;
 
@@ -23,6 +24,7 @@ import java.util.Map;
 
 public class PorterDuffXfermodeActivity extends BaseActivity{
     private PorterDuffXfermodeView mView;
+    private DisInView mDisInView;
     private ListView mListView;
     private ArrayList<PorterDuff.Mode> mList = new ArrayList<>();
     private ArrayList<String> mList2 = new ArrayList<>();
@@ -36,6 +38,7 @@ public class PorterDuffXfermodeActivity extends BaseActivity{
     @Override
     protected void afterCreate(Bundle savedInstanceState) {
         mView = (PorterDuffXfermodeView) findViewById(R.id.PorterDuffXfermodeView);
+        mDisInView = (DisInView) findViewById(R.id.disView);
         mListView = (ListView) findViewById(R.id.mode_list);
         initData();
     }
@@ -79,6 +82,38 @@ public class PorterDuffXfermodeActivity extends BaseActivity{
         mList2.add("SRC_OVER");
         mList2.add("XOR");
 
+//        在Android的PorterDuff.Mode类中列举了他们制定的规则：
+//
+//        android.graphics.PorterDuff.Mode. SRC :只绘制源图像
+//
+//        android.graphics.PorterDuff.Mode. DST :只绘制目标图像
+//
+//        android.graphics.PorterDuff.Mode. DST_OVER :在源图像的顶部绘制目标图像
+//
+//        android.graphics.PorterDuff.Mode. DST_IN :只在源图像和目标图像相交的地方绘制目标图像
+//
+//        android.graphics.PorterDuff.Mode. DST_OUT :只在源图像和目标图像不相交的地方绘制目标图像
+//
+//        android.graphics.PorterDuff.Mode. DST_ATOP :在源图像和目标图像相交的地方绘制目标图像，在不相交的地方绘制源图像
+//
+//        android.graphics.PorterDuff.Mode. SRC_OVER :在目标图像的顶部绘制源图像
+//
+//        android.graphics.PorterDuff.Mode. SRC_IN :只在源图像和目标图像相交的地方绘制源图像
+//
+//        android.graphics.PorterDuff.Mode. SRC_OUT :只在源图像和目标图像不相交的地方绘制源图像
+//
+//        android.graphics.PorterDuff.Mode. SRC_ATOP :在源图像和目标图像相交的地方绘制源图像，在不相交的地方绘制目标图像
+//
+//        android.graphics.PorterDuff.Mode. XOR :在源图像和目标图像重叠之外的任何地方绘制他们，而在不重叠的地方不绘制任何内容
+//
+//        android.graphics.PorterDuff.Mode. LIGHTEN :获得每个位置上两幅图像中最亮的像素并显示
+//
+//        android.graphics.PorterDuff.Mode. DARKEN :获得每个位置上两幅图像中最暗的像素并显示
+//
+//        android.graphics.PorterDuff.Mode. MULTIPLY :将每个位置的两个像素相乘，除以255，然后使用该值创建一个新的像素进行显示。结果颜色=顶部颜色*底部颜色/255
+//
+//        android.graphics.PorterDuff.Mode. SCREEN :反转每个颜色，执行相同的操作（将他们相乘并除以255），然后再次反转。结果颜色=255-(((255-顶部颜色)*(255-底部颜色))/255)
+
         for (int i = 0; i < mList2.size(); i++) {
             Map<String,String> map = new HashMap<>();
             map.put("name",mList2.get(i));
@@ -98,8 +133,10 @@ public class PorterDuffXfermodeActivity extends BaseActivity{
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mView.setMODE(mList.get(position));
-                mView.invalidate();
+//                mView.setMODE(mList.get(position));
+//                mView.invalidate();
+                mDisInView.setMode(mList.get(position));
+                mDisInView.invalidate();
             }
         });
     }
