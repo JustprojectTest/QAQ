@@ -14,7 +14,7 @@ public final class MeasureUtil {
 	 * ��ȡ��Ļ�ߴ�
 	 * 
 	 * @param activity
-	 *            Activity
+	 *            Activity123
 	 * @return
 	 */
 	public static int[] getScreenSize(Activity activity) {
