@@ -15,7 +15,7 @@ public final class MeasureUtil {
 	 * 
 	 * @param activity
 	 *            Activity
-	 * @return ��Ļ�ߴ�����ֵ���±�Ϊ0��ֵΪ���±�Ϊ1��ֵΪ��
+	 * @return
 	 */
 	public static int[] getScreenSize(Activity activity) {
 		DisplayMetrics metrics = new DisplayMetrics();
